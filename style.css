@@ -1,0 +1,102 @@
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.container {
+    width: 420px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #000000;
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+h1 {
+    text-align: center;
+    color: #000000;
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="number"], input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #000000;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.navbar {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.nav-btn {
+    width: 48%;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    margin: 0 1%;
+}
+
+.nav-btn.active-nav {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.person-box {
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #000000;
+}
+
+#resultBox, #personalResultBox {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #000000;
+}
+
+#resultBox h3, #personalResultBox h3 {
+    margin: 5px 0;
+}
+
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    border: 1px solid #000000;
+    margin-top: 5px;
+    font-family: monospace;
+    resize: none;
+}
+
+#welcomeScreen {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+
