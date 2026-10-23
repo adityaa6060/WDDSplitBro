@@ -6,7 +6,8 @@ body {
 }
 
 .container {
-    width: 420px;
+    width: 450px;
+    max-width: 95%;
     margin: 20px auto;
     padding: 20px;
     border: 2px solid #000000;
@@ -26,7 +27,8 @@ label {
     font-weight: bold;
 }
 
-input[type="number"], input[type="text"] {
+input[type="number"],
+input[type="text"] {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
@@ -50,17 +52,31 @@ button:hover {
 }
 
 .navbar {
-    text-align: center;
+    display: flex;
+    gap: 6px;
     margin-bottom: 20px;
 }
 
 .nav-btn {
-    width: 48%;
+    flex: 1;
     box-sizing: border-box;
     background-color: #ffffff;
     color: #000000;
     font-weight: bold;
-    margin: 0 1%;
+    padding: 8px 4px;
+    font-size: 12px;
+    margin: 0;
+    white-space: nowrap;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid #000000;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    background-color: #000000;
+    color: #ffffff;
 }
 
 .nav-btn.active-nav {
@@ -68,20 +84,45 @@ button:hover {
     color: #ffffff;
 }
 
-.person-box {
+.person-box,
+.item-box {
     margin-bottom: 15px;
     padding-bottom: 5px;
     border-bottom: 1px dashed #000000;
 }
 
-#resultBox, #personalResultBox {
+#resultBox,
+#personalResultBox,
+#customResultBox {
     margin-top: 20px;
     padding: 15px;
     border: 1px solid #000000;
 }
 
-#resultBox h3, #personalResultBox h3 {
+#resultBox h3,
+#personalResultBox h3,
+#customResultBox h3 {
     margin: 5px 0;
+}
+
+.history-card {
+    border: 1px solid #000000;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    background: #fdfdfd;
+}
+
+.history-card small {
+    display: block;
+    color: #555555;
+    margin: 3px 0 6px;
+}
+
+.history-card pre {
+    margin: 0;
+    font-family: monospace;
+    white-space: pre-wrap;
 }
 
 textarea {
@@ -98,5 +139,3 @@ textarea {
     text-align: center;
     padding: 40px 20px;
 }
-
-

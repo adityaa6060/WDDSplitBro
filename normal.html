@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SplitBro - Normal Split</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>SPLITBRO</h1>
+        <hr>
+        <br>
+
+        <div class="navbar">
+            <a href="normal.html" class="nav-btn active-nav">Normal Split</a>
+            <a href="personal.html" class="nav-btn">Personal Split</a>
+            <a href="custom.html" class="nav-btn">Custom Split</a>
+            <a href="history.html" class="nav-btn">History</a>
+        </div>
+
+        <div id="normalScreen">
+            <label for="totalBill">Total Bill Amount (Rs):</label>
+            <input type="number" id="totalBill" placeholder="Enter total bill amount">
+
+            <label for="peopleCount">Number of People:</label>
+            <input type="number" id="peopleCount" placeholder="Enter number of people">
+
+            <label for="extraFee">Extra Charges / Tip (Rs):</label>
+            <input type="number" id="extraFee" placeholder="Enter extra charges (optional)">
+
+            <label for="discount">Discount (Rs):</label>
+            <input type="number" id="discount" placeholder="Enter discount (optional)">
+
+            <button onclick="splitBill()">Calculate</button>
+            <button onclick="resetForm()">Reset</button>
+
+            <div id="resultBox">
+                <h3 id="totalAmount">Total Amount: Rs. 0.00</h3>
+                <h3 id="perPersonAmount">Each Person Pays: Rs. 0.00</h3>
+                <br>
+                <label for="summaryText">Share Summary:</label>
+                <textarea id="summaryText" rows="6" readonly
+                    placeholder="Calculated split will appear here..."></textarea>
+                <br><br>
+                <button onclick="copySummary()">Copy to Clipboard</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="hah.js"></script>
+</body>
+
+</html>

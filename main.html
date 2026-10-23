@@ -3,91 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SplitBro</title>
-    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="refresh" content="0; url=index.html">
+    <title>Redirecting to SplitBro...</title>
 </head>
 
 <body>
-
-    <div class="container" id="welcomeScreen">
-        <h1>SplitBro</h1>
-        <br><br>
-        <button onclick="goToMainScreen()">Get Started</button>
-    </div>
-
-    <div class="container" id="mainScreen" style="display: none;">
-        <h1>SPLITBRO</h1>
-        <hr>
-        <br>
-
-        <div class="navbar">
-            <button id="navNormal" class="nav-btn active-nav" onclick="showTab('normal')">Normal Split</button>
-            <button id="navPersonal" class="nav-btn" onclick="showTab('personal')">Personal Split</button>
-        </div>
-
-        <div id="normalScreen">
-            <label for="totalBill">Total Bill Amount (Rs):</label>
-            <input type="number" id="totalBill" placeholder="Enter total bill amount">
-
-            <label for="peopleCount">Number of People:</label>
-            <input type="number" id="peopleCount" placeholder="Enter number of people">
-
-            <label for="extraFee">Extra Charges / Tip (Rs):</label>
-            <input type="number" id="extraFee" placeholder="Enter extra charges (optional)">
-
-            <label for="discount">Discount (Rs):</label>
-            <input type="number" id="discount" placeholder="Enter discount (optional)">
-
-            <button onclick="splitBill()">Calculate</button>
-            <button onclick="resetForm()">Reset</button>
-
-            <div id="resultBox">
-                <h3 id="totalAmount">Total Amount: Rs. 0.00</h3>
-                <h3 id="perPersonAmount">Each Person Pays: Rs. 0.00</h3>
-                <br>
-                <label for="summaryText">Share Summary:</label>
-                <textarea id="summaryText" rows="6" readonly
-                    placeholder="Calculated split will appear here..."></textarea>
-                <br><br>
-                <button onclick="copySummary()">Copy to Clipboard</button>
-            </div>
-        </div>
-
-        <div id="personalScreen" style="display: none;">
-            <div id="personList">
-                <div class="person-box">
-                    <label>Person 1 Name:</label>
-                    <input type="text" class="personName" placeholder="Enter Person 1 name">
-                    <label>Amount Spent (Rs):</label>
-                    <input type="number" class="personAmount" placeholder="Enter amount spent">
-                </div>
-                <div class="person-box">
-                    <label>Person 2 Name:</label>
-                    <input type="text" class="personName" placeholder="Enter Person 2 name">
-                    <label>Amount Spent (Rs):</label>
-                    <input type="number" class="personAmount" placeholder="Enter amount spent">
-                </div>
-            </div>
-
-            <button onclick="addPerson()">+ Add Person</button>
-            <button onclick="calculatePersonalSplit()">Calculate</button>
-            <button onclick="resetPersonalForm()">Reset</button>
-
-            <div id="personalResultBox">
-                <h3 id="personalTotalAmount">Total Spent: Rs. 0.00</h3>
-                <h3 id="personalPerPersonAmount">Each Person's Share: Rs. 0.00</h3>
-                <br>
-                <label for="personalSummaryText">Share Summary:</label>
-                <textarea id="personalSummaryText" rows="6" readonly
-                    placeholder="Calculated split will appear here..."></textarea>
-                <br><br>
-                <button onclick="copyPersonalSummary()">Copy to Clipboard</button>
-            </div>
-        </div>
-    </div>
-
-    <script src="hah.js"></script>
+    <p>Redirecting to <a href="index.html">SplitBro</a>...</p>
 </body>
 
 </html>
