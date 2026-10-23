@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SplitBro - Custom Split</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="page-layout">
+        <div class="desc-box">
+            <h2>Custom Split</h2>
+            <p>Split a cafe or restaurant receipt dish-by-dish so everyone pays only for what they had.</p>
+            <ul>
+                <li>Enter the dish/item name and its price.</li>
+                <li>List who shared that dish (comma-separated, e.g. <em>Alex, Bob</em>).</li>
+                <li>Calculates each individual person's exact bill automatically.</li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <h1>SPLITBRO</h1>
+            <hr>
+            <br>
+
+            <div class="navbar">
+                <a href="normalsplit.html" class="nav-btn">Normal Split</a>
+                <a href="personalsplit.html" class="nav-btn">Personal Split</a>
+                <a href="customsplit.html" class="nav-btn active-nav">Custom Split</a>
+                <a href="history.html" class="nav-btn">History</a>
+            </div>
+
+            <div id="customScreen">
+                <div id="itemList">
+                    <div class="item-box">
+                        <label>Item 1:</label>
+                        <input type="text" class="itemName" placeholder="Item name (e.g. Pizza)">
+                        <label>Price (Rs):</label>
+                        <input type="number" class="itemPrice" placeholder="Enter item price">
+                        <label>Who shared it? (names separated by comma):</label>
+                        <input type="text" class="itemPeople" placeholder="e.g. Alex, Bob">
+                    </div>
+                </div>
+
+                <button onclick="addItem()">+ Add Item</button>
+                <button onclick="calculateCustomSplit()">Calculate</button>
+                <button onclick="resetCustomForm()">Reset</button>
+
+                <div id="customResultBox">
+                    <h3 id="customTotalAmount">Total Bill: Rs. 0.00</h3>
+                    <br>
+                    <label for="customSummaryText">Share Summary:</label>
+                    <textarea id="customSummaryText" rows="6" readonly
+                        placeholder="Calculated split will appear here..."></textarea>
+                    <br><br>
+                    <button onclick="copyText('customSummaryText')">Copy to Clipboard</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="hah.js"></script>
+</body>
+
+</html>

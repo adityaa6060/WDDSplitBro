@@ -10,22 +10,34 @@
 
 <body>
 
-    <div class="container">
-        <h1>SPLITBRO</h1>
-        <hr>
-        <br>
-
-        <div class="navbar">
-            <a href="normal.html" class="nav-btn">Normal Split</a>
-            <a href="personal.html" class="nav-btn">Personal Split</a>
-            <a href="custom.html" class="nav-btn">Custom Split</a>
-            <a href="history.html" class="nav-btn active-nav">History</a>
+    <div class="page-layout">
+        <div class="desc-box">
+            <h2>Split History</h2>
+            <p>Your recent split calculations are saved locally in your browser.</p>
+            <ul>
+                <li>Automatically saves calculations from Normal, Personal, and Custom splits.</li>
+                <li>Displays split type, timestamp, and full breakdown.</li>
+                <li>Clear stored history anytime with one click.</li>
+            </ul>
         </div>
 
-        <div id="historyScreen">
-            <div id="historyList"></div>
+        <div class="container">
+            <h1>SPLITBRO</h1>
+            <hr>
             <br>
-            <button onclick="clearHistory()">Clear History</button>
+
+            <div class="navbar">
+                <a href="normalsplit.html" class="nav-btn">Normal Split</a>
+                <a href="personalsplit.html" class="nav-btn">Personal Split</a>
+                <a href="customsplit.html" class="nav-btn">Custom Split</a>
+                <a href="history.html" class="nav-btn active-nav">History</a>
+            </div>
+
+            <div id="historyScreen">
+                <div id="historyList"></div>
+                <br>
+                <button onclick="clearHistory()">Clear History</button>
+            </div>
         </div>
     </div>
 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SplitBro - Personal Split</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="page-layout">
+        <div class="desc-box">
+            <h2>Personal Split</h2>
+            <p>Track group outings or trips where multiple people paid for different things.</p>
+            <ul>
+                <li>Add every person's name and how much they paid.</li>
+                <li>Calculates the group's total spending & fair share.</li>
+                <li>Shows exactly who owes money and who gets refunded.</li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <h1>SPLITBRO</h1>
+            <hr>
+            <br>
+
+            <div class="navbar">
+                <a href="normalsplit.html" class="nav-btn">Normal Split</a>
+                <a href="personalsplit.html" class="nav-btn active-nav">Personal Split</a>
+                <a href="customsplit.html" class="nav-btn">Custom Split</a>
+                <a href="history.html" class="nav-btn">History</a>
+            </div>
+
+            <div id="personalScreen">
+                <div id="personList">
+                    <div class="person-box">
+                        <label>Person 1 Name:</label>
+                        <input type="text" class="personName" placeholder="Enter Person 1 name">
+                        <label>Amount Spent (Rs):</label>
+                        <input type="number" class="personAmount" placeholder="Enter amount spent">
+                    </div>
+                    <div class="person-box">
+                        <label>Person 2 Name:</label>
+                        <input type="text" class="personName" placeholder="Enter Person 2 name">
+                        <label>Amount Spent (Rs):</label>
+                        <input type="number" class="personAmount" placeholder="Enter amount spent">
+                    </div>
+                </div>
+
+                <button onclick="addPerson()">+ Add Person</button>
+                <button onclick="calculatePersonalSplit()">Calculate</button>
+                <button onclick="resetPersonalForm()">Reset</button>
+
+                <div id="personalResultBox">
+                    <h3 id="personalTotalAmount">Total Spent: Rs. 0.00</h3>
+                    <h3 id="personalPerPersonAmount">Each Person's Share: Rs. 0.00</h3>
+                    <br>
+                    <label for="personalSummaryText">Share Summary:</label>
+                    <textarea id="personalSummaryText" rows="6" readonly
+                        placeholder="Calculated split will appear here..."></textarea>
+                    <br><br>
+                    <button onclick="copyPersonalSummary()">Copy to Clipboard</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="hah.js"></script>
+</body>
+
+</html>
