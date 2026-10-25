@@ -4,12 +4,21 @@ function goToMainScreen() {
 }
 
 function showTab(tab) {
-    ["normal", "personal", "custom", "history"].forEach(t => {
-        document.getElementById(t + "Screen").style.display = (t === tab) ? "block" : "none";
-        document.getElementById("nav" + t.charAt(0).toUpperCase() + t.slice(1)).className =
-            (t === tab) ? "nav-btn active-nav" : "nav-btn";
-    });
-    if (tab === "history") loadHistory();
+    let screens = ["normal", "personal", "custom", "history"];
+    for (let i = 0; i < screens.length; i++) {
+        let name = screens[i];
+        let screen = document.getElementById(name + "Screen");
+        if (screen) {
+            if (name === tab) {
+                screen.style.display = "block";
+            } else {
+                screen.style.display = "none";
+            }
+        }
+    }
+    if (tab === "history") {
+        loadHistory();
+    }
 }
 
 function splitBill() {
@@ -171,16 +180,34 @@ function calculateCustomSplit() {
     for (let i = 0; i < names.length; i++) {
         let price = Number(prices[i].value);
         let peopleStr = consumers[i].value.trim();
-        if (price <= 0 || !peopleStr) continue;
+        if (price <= 0 || peopleStr === "") {
+            continue;
+        }
 
         total += price;
-        let people = peopleStr.split(",").map(p => p.trim()).filter(p => p.length > 0);
-        if (people.length === 0) continue;
+
+        let rawPeople = peopleStr.split(",");
+        let people = [];
+        for (let j = 0; j < rawPeople.length; j++) {
+            let p = rawPeople[j].trim();
+            if (p !== "") {
+                people.push(p);
+            }
+        }
+
+        if (people.length === 0) {
+            continue;
+        }
 
         let splitAmount = price / people.length;
-        people.forEach(p => {
-            personTotals[p] = (personTotals[p] || 0) + splitAmount;
-        });
+        for (let j = 0; j < people.length; j++) {
+            let p = people[j];
+            if (personTotals[p]) {
+                personTotals[p] += splitAmount;
+            } else {
+                personTotals[p] = splitAmount;
+            }
+        }
     }
 
     if (total <= 0) {
@@ -213,25 +240,29 @@ function resetCustomForm() {
 }
 
 function saveHistory(type, summary) {
-    let history = JSON.parse(localStorage.getItem("splitHistory") || "[]");
-    history.unshift({ type: type, date: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), summary: summary });
-    if (history.length > 15) history.pop();
-    localStorage.setItem("splitHistory", JSON.stringify(history));
+    let card = '<div class="history-card">' +
+        '<strong>' + type + '</strong>' +
+        '<pre>' + summary + '</pre>' +
+        '</div>';
+    let saved = localStorage.getItem("splitHistory") || "";
+    localStorage.setItem("splitHistory", card + saved);
+
+    let list = document.getElementById("historyList");
+    if (list) {
+        list.innerHTML = card + saved;
+    }
 }
 
 function loadHistory() {
-    let history = JSON.parse(localStorage.getItem("splitHistory") || "[]");
     let list = document.getElementById("historyList");
-    if (history.length === 0) {
+    if (!list) return;
+
+    let saved = localStorage.getItem("splitHistory");
+    if (!saved) {
         list.innerHTML = "<p style='text-align:center;'>No split history yet.</p>";
-        return;
+    } else {
+        list.innerHTML = saved;
     }
-    list.innerHTML = history.map(item =>
-        '<div class="history-card">' +
-        '<strong>' + item.type + '</strong> <small>' + item.date + '</small>' +
-        '<pre>' + item.summary + '</pre>' +
-        '</div>'
-    ).join("");
 }
 
 function clearHistory() {
